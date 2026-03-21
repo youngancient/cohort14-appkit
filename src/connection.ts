@@ -1,12 +1,12 @@
-import { CaipNetwork, createAppKit } from "@reown/appkit/react";
+import { createAppKit } from "@reown/appkit/react";
 import { EthersAdapter } from "@reown/appkit-adapter-ethers";
-import { rootstockTestnet as rawRootstock } from "@reown/appkit/networks";
+import { rootstockTestnet as rawRootstock, type AppKitNetwork  } from "@reown/appkit/networks";
 
 
 // 1. Get projectId
 const projectId = import.meta.env.VITE_APPKIT_PROJECT_ID;
 
-export const rootstockTestnet: CaipNetwork = {
+export const rootstockTestnet: AppKitNetwork = {
   ...rawRootstock,
   id: 31,
   chainNamespace: "eip155",
@@ -14,7 +14,7 @@ export const rootstockTestnet: CaipNetwork = {
 };
 
 // 2. Set the networks
-const networks: [CaipNetwork, ...CaipNetwork[]] = [
+const networks: [AppKitNetwork, ...AppKitNetwork[]] = [
   rootstockTestnet,
 ];
 
